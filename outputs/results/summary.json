@@ -1,0 +1,423 @@
+{
+  "internal_cv": [
+    {
+      "subset": "All cases",
+      "model": "PI-RADS (radiologist)",
+      "n": 1500,
+      "prevalence": 0.2833,
+      "auroc": 0.8606,
+      "auroc_lo": 0.841,
+      "auroc_hi": 0.8784,
+      "auprc": 0.6056,
+      "brier": NaN,
+      "ece": NaN
+    },
+    {
+      "subset": "All cases",
+      "model": "Clinical LR",
+      "n": 1500,
+      "prevalence": 0.2833,
+      "auroc": 0.7532,
+      "auroc_lo": 0.7264,
+      "auroc_hi": 0.7813,
+      "auprc": 0.5533,
+      "brier": 0.1689,
+      "ece": 0.022
+    },
+    {
+      "subset": "All cases",
+      "model": "Early-fusion LR (mean imputation)",
+      "n": 1500,
+      "prevalence": 0.2833,
+      "auroc": 0.8887,
+      "auroc_lo": 0.8699,
+      "auroc_hi": 0.9053,
+      "auprc": 0.7167,
+      "brier": 0.1218,
+      "ece": 0.0273
+    },
+    {
+      "subset": "All cases",
+      "model": "Early-fusion GBDT",
+      "n": 1500,
+      "prevalence": 0.2833,
+      "auroc": 0.8721,
+      "auroc_lo": 0.8521,
+      "auroc_hi": 0.89,
+      "auprc": 0.676,
+      "brier": 0.1305,
+      "ece": 0.0419
+    },
+    {
+      "subset": "All cases",
+      "model": "Fusion ensemble (ours)",
+      "n": 1500,
+      "prevalence": 0.2833,
+      "auroc": 0.8811,
+      "auroc_lo": 0.8632,
+      "auroc_hi": 0.8982,
+      "auprc": 0.7047,
+      "brier": 0.1248,
+      "ece": 0.0262
+    },
+    {
+      "subset": "Biopsied only",
+      "model": "PI-RADS (radiologist)",
+      "n": 1032,
+      "prevalence": 0.4118,
+      "auroc": 0.7607,
+      "auroc_lo": 0.734,
+      "auroc_hi": 0.7896,
+      "auprc": 0.6082,
+      "brier": NaN,
+      "ece": NaN
+    },
+    {
+      "subset": "Biopsied only",
+      "model": "Clinical LR",
+      "n": 1032,
+      "prevalence": 0.4118,
+      "auroc": 0.6996,
+      "auroc_lo": 0.6664,
+      "auroc_hi": 0.732,
+      "auprc": 0.6199,
+      "brier": 0.2211,
+      "ece": 0.0882
+    },
+    {
+      "subset": "Biopsied only",
+      "model": "Early-fusion LR (mean imputation)",
+      "n": 1032,
+      "prevalence": 0.4118,
+      "auroc": 0.8082,
+      "auroc_lo": 0.7825,
+      "auroc_hi": 0.8336,
+      "auprc": 0.7182,
+      "brier": 0.1763,
+      "ece": 0.0418
+    },
+    {
+      "subset": "Biopsied only",
+      "model": "Early-fusion GBDT",
+      "n": 1032,
+      "prevalence": 0.4118,
+      "auroc": 0.7821,
+      "auroc_lo": 0.7529,
+      "auroc_hi": 0.8099,
+      "auprc": 0.6779,
+      "brier": 0.1895,
+      "ece": 0.0666
+    },
+    {
+      "subset": "Biopsied only",
+      "model": "Fusion ensemble (ours)",
+      "n": 1032,
+      "prevalence": 0.4118,
+      "auroc": 0.7964,
+      "auroc_lo": 0.7699,
+      "auroc_hi": 0.8234,
+      "auprc": 0.7063,
+      "brier": 0.1813,
+      "ece": 0.0423
+    }
+  ],
+  "missing_modality_auroc": {
+    "Clinical LR": {
+      "All": 0.7532,
+      "No imaging": 0.7532,
+      "No radiology": 0.7532,
+      "No clinical": 0.4996,
+      "Clinical only": 0.7532
+    },
+    "Early-fusion LR (mean imputation)": {
+      "All": 0.8887,
+      "No imaging": 0.8668,
+      "No radiology": 0.7885,
+      "No clinical": 0.8706,
+      "Clinical only": 0.6385
+    },
+    "Early-fusion GBDT": {
+      "All": 0.8721,
+      "No imaging": 0.8632,
+      "No radiology": 0.6647,
+      "No clinical": 0.8443,
+      "Clinical only": 0.5962
+    },
+    "Fusion ensemble (ours)": {
+      "All": 0.8811,
+      "No imaging": 0.877,
+      "No radiology": 0.7751,
+      "No clinical": 0.8682,
+      "Clinical only": 0.7562
+    }
+  },
+  "conformal": [
+    {
+      "alpha": 0.3,
+      "coverage_cspca": 0.72,
+      "coverage_non_cspca": 0.693,
+      "ambiguous_frac": 0.0,
+      "confident_negative_frac": 0.5167,
+      "confident_positive_frac": 0.312,
+      "empty_frac": 0.1713
+    },
+    {
+      "alpha": 0.2,
+      "coverage_cspca": 0.8141,
+      "coverage_non_cspca": 0.8047,
+      "ambiguous_frac": 0.0387,
+      "confident_negative_frac": 0.5973,
+      "confident_positive_frac": 0.3487,
+      "empty_frac": 0.0153
+    },
+    {
+      "alpha": 0.15,
+      "coverage_cspca": 0.8682,
+      "coverage_non_cspca": 0.8549,
+      "ambiguous_frac": 0.1207,
+      "confident_negative_frac": 0.5773,
+      "confident_positive_frac": 0.302,
+      "empty_frac": 0.0
+    },
+    {
+      "alpha": 0.1,
+      "coverage_cspca": 0.9106,
+      "coverage_non_cspca": 0.8995,
+      "ambiguous_frac": 0.2347,
+      "confident_negative_frac": 0.534,
+      "confident_positive_frac": 0.2313,
+      "empty_frac": 0.0
+    },
+    {
+      "alpha": 0.05,
+      "coverage_cspca": 0.9718,
+      "coverage_non_cspca": 0.9535,
+      "ambiguous_frac": 0.4427,
+      "confident_negative_frac": 0.4207,
+      "confident_positive_frac": 0.1367,
+      "empty_frac": 0.0
+    }
+  ],
+  "uncertainty_vs_error": {
+    "epistemic_std_auroc_for_errors": 0.772997808439935,
+    "ambiguous_set_error_rate": 0.4119318181818182,
+    "confident_set_error_rate": 0.1254355400696864
+  },
+  "operating_points_biopsied": [
+    {
+      "strategy": "Fusion model, target sensitivity 95% (calibration-set threshold)",
+      "sensitivity": 0.9271,
+      "specificity": 0.4498,
+      "biopsies_avoided_frac": 0.2946,
+      "missed_cspca": 31,
+      "missed_cspca_frac_of_all_cases": 0.03
+    },
+    {
+      "strategy": "PI-RADS >= 3",
+      "sensitivity": 0.9812,
+      "specificity": 0.2306,
+      "biopsies_avoided_frac": 0.1434,
+      "missed_cspca": 8,
+      "missed_cspca_frac_of_all_cases": 0.0078
+    },
+    {
+      "strategy": "PI-RADS >= 4",
+      "sensitivity": 0.9365,
+      "specificity": 0.4481,
+      "biopsies_avoided_frac": 0.2897,
+      "missed_cspca": 27,
+      "missed_cspca_frac_of_all_cases": 0.0262
+    },
+    {
+      "strategy": "PI-RADS >= 4, or PI-RADS 3 with PSAD >= 0.15",
+      "sensitivity": 0.9647,
+      "specificity": 0.3328,
+      "biopsies_avoided_frac": 0.2103,
+      "missed_cspca": 15,
+      "missed_cspca_frac_of_all_cases": 0.0145
+    }
+  ],
+  "leave_one_center_out": [
+    {
+      "held_out_center": "PCNN",
+      "model": "PI-RADS (radiologist)",
+      "n": 350,
+      "prevalence": 0.3114,
+      "auroc": 0.7879,
+      "auroc_lo": 0.7455,
+      "auroc_hi": 0.8305,
+      "auprc": 0.525,
+      "brier": NaN,
+      "ece": NaN
+    },
+    {
+      "held_out_center": "PCNN",
+      "model": "Clinical LR",
+      "n": 350,
+      "prevalence": 0.3114,
+      "auroc": 0.6335,
+      "auroc_lo": 0.5705,
+      "auroc_hi": 0.6976,
+      "auprc": 0.4262,
+      "brier": 0.2156,
+      "ece": 0.0942
+    },
+    {
+      "held_out_center": "PCNN",
+      "model": "Early-fusion LR (mean imputation)",
+      "n": 350,
+      "prevalence": 0.3114,
+      "auroc": 0.7977,
+      "auroc_lo": 0.752,
+      "auroc_hi": 0.842,
+      "auprc": 0.5639,
+      "brier": 0.1743,
+      "ece": 0.0927
+    },
+    {
+      "held_out_center": "PCNN",
+      "model": "Early-fusion GBDT",
+      "n": 350,
+      "prevalence": 0.3114,
+      "auroc": 0.7588,
+      "auroc_lo": 0.7103,
+      "auroc_hi": 0.8089,
+      "auprc": 0.5251,
+      "brier": 0.1863,
+      "ece": 0.1036
+    },
+    {
+      "held_out_center": "PCNN",
+      "model": "Fusion ensemble (ours)",
+      "n": 350,
+      "prevalence": 0.3114,
+      "auroc": 0.7944,
+      "auroc_lo": 0.7489,
+      "auroc_hi": 0.84,
+      "auprc": 0.5563,
+      "brier": 0.1681,
+      "ece": 0.0473
+    },
+    {
+      "held_out_center": "RUMC",
+      "model": "PI-RADS (radiologist)",
+      "n": 800,
+      "prevalence": 0.295,
+      "auroc": 0.8749,
+      "auroc_lo": 0.8519,
+      "auroc_hi": 0.8951,
+      "auprc": 0.6444,
+      "brier": NaN,
+      "ece": NaN
+    },
+    {
+      "held_out_center": "RUMC",
+      "model": "Clinical LR",
+      "n": 800,
+      "prevalence": 0.295,
+      "auroc": 0.787,
+      "auroc_lo": 0.753,
+      "auroc_hi": 0.8205,
+      "auprc": 0.6099,
+      "brier": 0.1769,
+      "ece": 0.0873
+    },
+    {
+      "held_out_center": "RUMC",
+      "model": "Early-fusion LR (mean imputation)",
+      "n": 800,
+      "prevalence": 0.295,
+      "auroc": 0.8972,
+      "auroc_lo": 0.8741,
+      "auroc_hi": 0.9173,
+      "auprc": 0.7612,
+      "brier": 0.1219,
+      "ece": 0.0373
+    },
+    {
+      "held_out_center": "RUMC",
+      "model": "Early-fusion GBDT",
+      "n": 800,
+      "prevalence": 0.295,
+      "auroc": 0.8714,
+      "auroc_lo": 0.8464,
+      "auroc_hi": 0.8968,
+      "auprc": 0.6981,
+      "brier": 0.135,
+      "ece": 0.0573
+    },
+    {
+      "held_out_center": "RUMC",
+      "model": "Fusion ensemble (ours)",
+      "n": 800,
+      "prevalence": 0.295,
+      "auroc": 0.903,
+      "auroc_lo": 0.8822,
+      "auroc_hi": 0.9226,
+      "auprc": 0.7773,
+      "brier": 0.1231,
+      "ece": 0.0581
+    },
+    {
+      "held_out_center": "ZGT",
+      "model": "PI-RADS (radiologist)",
+      "n": 350,
+      "prevalence": 0.2286,
+      "auroc": 0.8944,
+      "auroc_lo": 0.8603,
+      "auroc_hi": 0.9266,
+      "auprc": 0.6098,
+      "brier": NaN,
+      "ece": NaN
+    },
+    {
+      "held_out_center": "ZGT",
+      "model": "Clinical LR",
+      "n": 350,
+      "prevalence": 0.2286,
+      "auroc": 0.7972,
+      "auroc_lo": 0.7369,
+      "auroc_hi": 0.8505,
+      "auprc": 0.5505,
+      "brier": 0.1593,
+      "ece": 0.1472
+    },
+    {
+      "held_out_center": "ZGT",
+      "model": "Early-fusion LR (mean imputation)",
+      "n": 350,
+      "prevalence": 0.2286,
+      "auroc": 0.9098,
+      "auroc_lo": 0.8776,
+      "auroc_hi": 0.939,
+      "auprc": 0.6797,
+      "brier": 0.1069,
+      "ece": 0.0545
+    },
+    {
+      "held_out_center": "ZGT",
+      "model": "Early-fusion GBDT",
+      "n": 350,
+      "prevalence": 0.2286,
+      "auroc": 0.8954,
+      "auroc_lo": 0.8624,
+      "auroc_hi": 0.9274,
+      "auprc": 0.6675,
+      "brier": 0.1139,
+      "ece": 0.0601
+    },
+    {
+      "held_out_center": "ZGT",
+      "model": "Fusion ensemble (ours)",
+      "n": 350,
+      "prevalence": 0.2286,
+      "auroc": 0.911,
+      "auroc_lo": 0.8811,
+      "auroc_hi": 0.9387,
+      "auprc": 0.7048,
+      "brier": 0.1022,
+      "ece": 0.0356
+    }
+  ],
+  "runtime_s": 71.0
+}

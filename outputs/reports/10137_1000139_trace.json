@@ -1,0 +1,189 @@
+{
+  "case_id": "10137_1000139",
+  "flag": "low",
+  "citation_check": {
+    "cited": [
+      "EAU-2",
+      "EAU-3",
+      "PIRADS-1",
+      "PIRADS-2",
+      "PSAD-1"
+    ],
+    "unknown_ids": [],
+    "not_retrieved_ids": [],
+    "passed": true
+  },
+  "trace": [
+    {
+      "tool": "get_case",
+      "input": {
+        "case_id": "10137_1000139"
+      },
+      "output": {
+        "case_id": "10137_1000139",
+        "center": "ZGT",
+        "psa_ng_ml": 6.0,
+        "modalities": {
+          "clinical": {
+            "available": true,
+            "features": {
+              "age": 60.0,
+              "log_psa": 1.9459,
+              "psad_reported": 0.11,
+              "volume_reported": 53.0
+            }
+          },
+          "radiology": {
+            "available": true,
+            "features": {
+              "pirads_max": 2.0,
+              "n_suspicious_lesions": 0.0,
+              "pirads_ge4": 0.0
+            }
+          },
+          "imaging": {
+            "available": true,
+            "features": {
+              "gland_volume_seg": 49.4175,
+              "pz_volume_seg": 15.9008,
+              "tz_volume_seg": 34.815,
+              "tz_fraction_seg": 0.6865
+            }
+          }
+        },
+        "missing_modalities": [],
+        "missing_features": [],
+        "seen_during_training": false
+      }
+    },
+    {
+      "tool": "predict_risk",
+      "input": {
+        "case_id": "10137_1000139"
+      },
+      "output": {
+        "probability_cspca": 0.011,
+        "epistemic_std": 0.002,
+        "ensemble_disagreement_high": false,
+        "conformal_set_90": "no csPCa",
+        "above_sensitivity95_threshold": false,
+        "sensitivity95_threshold": 0.189,
+        "modality_attention": {
+          "clinical": 0.109,
+          "radiology": 0.823,
+          "imaging": 0.069
+        },
+        "excluded_modalities": []
+      }
+    },
+    {
+      "tool": "modality_ablation",
+      "input": {
+        "case_id": "10137_1000139"
+      },
+      "output": {
+        "baseline_probability": 0.011,
+        "without_modality": {
+          "clinical": {
+            "probability_without": 0.009,
+            "change": -0.002
+          },
+          "radiology": {
+            "probability_without": 0.121,
+            "change": 0.11
+          },
+          "imaging": {
+            "probability_without": 0.008,
+            "change": -0.003
+          }
+        }
+      }
+    },
+    {
+      "tool": "find_similar_cases",
+      "input": {
+        "case_id": "10137_1000139"
+      },
+      "output": {
+        "k": 15,
+        "cspca_rate_among_similar": 0.0,
+        "n_cspca": 0,
+        "biopsied_fraction": 0.0,
+        "examples": [
+          {
+            "case_id": "11044_1001064",
+            "pirads_max": 2.0,
+            "psad": 0.08,
+            "cspca": 0
+          },
+          {
+            "case_id": "10091_1000091",
+            "pirads_max": 2.0,
+            "psad": 0.1,
+            "cspca": 0
+          },
+          {
+            "case_id": "10125_1000125",
+            "pirads_max": 2.0,
+            "psad": 0.11,
+            "cspca": 0
+          },
+          {
+            "case_id": "11432_1001456",
+            "pirads_max": 2.0,
+            "psad": 0.09,
+            "cspca": 0
+          },
+          {
+            "case_id": "10248_1000252",
+            "pirads_max": 2.0,
+            "psad": 0.1,
+            "cspca": 0
+          }
+        ]
+      }
+    },
+    {
+      "tool": "retrieve_evidence",
+      "input": {
+        "query": "clinically significant prostate cancer biopsy decision negative MRI PI-RADS 1-2 omit biopsy shared decision-making low suspicion PSA density threshold",
+        "k": 5
+      },
+      "output": {
+        "query": "clinically significant prostate cancer biopsy decision negative MRI PI-RADS 1-2 omit biopsy shared decision-making low suspicion PSA density threshold",
+        "results": [
+          {
+            "id": "EAU-3",
+            "source": "EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer",
+            "text": "When MRI is negative (PI-RADS 1-2) and clinical suspicion of prostate cancer is low, biopsy may be omitted based on shared decision-making with the patient.",
+            "score": 0.496
+          },
+          {
+            "id": "PIRADS-2",
+            "source": "PI-RADS v2.1 (Turkbey et al., Eur Urol 2019)",
+            "text": "PI-RADS 3 lesions are equivocal; the decision to biopsy is commonly informed by additional factors such as PSA density, prior biopsy history and patient preference.",
+            "score": 0.246
+          },
+          {
+            "id": "PSAD-1",
+            "source": "Schoots et al., BJU Int 2021 (risk-adapted biopsy decisions)",
+            "text": "PSA density thresholds around 0.15-0.20 ng/mL/cc are associated with a higher probability of clinically significant cancer; low PSA density with negative or equivocal MRI identifies men at low risk who may safely avoid immediate biopsy.",
+            "score": 0.232
+          },
+          {
+            "id": "EAU-2",
+            "source": "EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer",
+            "text": "When MRI is positive (PI-RADS 3 or higher), MRI-targeted biopsy is recommended, combined with systematic biopsy in biopsy-naive men.",
+            "score": 0.205
+          },
+          {
+            "id": "PIRADS-1",
+            "source": "PI-RADS v2.1 (Turkbey et al., Eur Urol 2019)",
+            "text": "PI-RADS assessment categories express the likelihood of clinically significant cancer: 1 very low, 2 low, 3 intermediate (equivocal), 4 high (likely), 5 very high (highly likely).",
+            "score": 0.182
+          }
+        ]
+      }
+    }
+  ]
+}

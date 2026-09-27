@@ -1,0 +1,214 @@
+{
+  "case_id": "10636_1000652",
+  "flag": "uncertain",
+  "citation_check": {
+    "cited": [
+      "AI-1",
+      "EAU-2",
+      "EAU-3",
+      "PIRADS-2",
+      "PRECISION-1",
+      "PSAD-1"
+    ],
+    "unknown_ids": [],
+    "not_retrieved_ids": [],
+    "passed": true
+  },
+  "trace": [
+    {
+      "tool": "get_case",
+      "input": {
+        "case_id": "10636_1000652"
+      },
+      "output": {
+        "case_id": "10636_1000652",
+        "center": "RUMC",
+        "psa_ng_ml": 6.1,
+        "modalities": {
+          "clinical": {
+            "available": true,
+            "features": {
+              "age": 62.0,
+              "log_psa": 1.9601,
+              "psad_reported": 0.12,
+              "volume_reported": 50.0
+            }
+          },
+          "radiology": {
+            "available": true,
+            "features": {
+              "pirads_max": 4.0,
+              "n_suspicious_lesions": 2.0,
+              "pirads_ge4": 1.0
+            }
+          },
+          "imaging": {
+            "available": true,
+            "features": {
+              "gland_volume_seg": 40.5897,
+              "pz_volume_seg": 16.3562,
+              "tz_volume_seg": 24.7517,
+              "tz_fraction_seg": 0.6021
+            }
+          }
+        },
+        "missing_modalities": [],
+        "missing_features": [],
+        "seen_during_training": false
+      }
+    },
+    {
+      "tool": "predict_risk",
+      "input": {
+        "case_id": "10636_1000652"
+      },
+      "output": {
+        "probability_cspca": 0.392,
+        "epistemic_std": 0.016,
+        "ensemble_disagreement_high": false,
+        "conformal_set_90": "ambiguous",
+        "above_sensitivity95_threshold": true,
+        "sensitivity95_threshold": 0.189,
+        "modality_attention": {
+          "clinical": 0.274,
+          "radiology": 0.53,
+          "imaging": 0.196
+        },
+        "excluded_modalities": []
+      }
+    },
+    {
+      "tool": "modality_ablation",
+      "input": {
+        "case_id": "10636_1000652"
+      },
+      "output": {
+        "baseline_probability": 0.392,
+        "without_modality": {
+          "clinical": {
+            "probability_without": 0.545,
+            "change": 0.153
+          },
+          "radiology": {
+            "probability_without": 0.196,
+            "change": -0.196
+          },
+          "imaging": {
+            "probability_without": 0.394,
+            "change": 0.002
+          }
+        }
+      }
+    },
+    {
+      "tool": "find_similar_cases",
+      "input": {
+        "case_id": "10636_1000652"
+      },
+      "output": {
+        "k": 15,
+        "cspca_rate_among_similar": 0.467,
+        "n_cspca": 7,
+        "biopsied_fraction": 1.0,
+        "examples": [
+          {
+            "case_id": "10422_1000430",
+            "pirads_max": 4.0,
+            "psad": 0.12,
+            "cspca": 0
+          },
+          {
+            "case_id": "11122_1001145",
+            "pirads_max": 4.0,
+            "psad": 0.08,
+            "cspca": 1
+          },
+          {
+            "case_id": "10135_1000137",
+            "pirads_max": 4.0,
+            "psad": 0.17,
+            "cspca": 1
+          },
+          {
+            "case_id": "11074_1001096",
+            "pirads_max": 5.0,
+            "psad": 0.19,
+            "cspca": 1
+          },
+          {
+            "case_id": "11350_1001373",
+            "pirads_max": 4.0,
+            "psad": 0.11,
+            "cspca": 1
+          }
+        ]
+      }
+    },
+    {
+      "tool": "retrieve_evidence",
+      "input": {
+        "query": "clinically significant prostate cancer biopsy decision positive MRI PI-RADS 4 5 targeted biopsy PSA density threshold",
+        "k": 5
+      },
+      "output": {
+        "query": "clinically significant prostate cancer biopsy decision positive MRI PI-RADS 4 5 targeted biopsy PSA density threshold",
+        "results": [
+          {
+            "id": "EAU-2",
+            "source": "EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer",
+            "text": "When MRI is positive (PI-RADS 3 or higher), MRI-targeted biopsy is recommended, combined with systematic biopsy in biopsy-naive men.",
+            "score": 0.394
+          },
+          {
+            "id": "PIRADS-2",
+            "source": "PI-RADS v2.1 (Turkbey et al., Eur Urol 2019)",
+            "text": "PI-RADS 3 lesions are equivocal; the decision to biopsy is commonly informed by additional factors such as PSA density, prior biopsy history and patient preference.",
+            "score": 0.278
+          },
+          {
+            "id": "PRECISION-1",
+            "source": "Kasivisvanathan et al., NEJM 2018 (PRECISION trial)",
+            "text": "An MRI-first pathway with targeted biopsy detected more clinically significant and fewer clinically insignificant cancers than standard systematic TRUS biopsy, while allowing some men to avoid biopsy.",
+            "score": 0.244
+          },
+          {
+            "id": "EAU-3",
+            "source": "EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer",
+            "text": "When MRI is negative (PI-RADS 1-2) and clinical suspicion of prostate cancer is low, biopsy may be omitted based on shared decision-making with the patient.",
+            "score": 0.241
+          },
+          {
+            "id": "PSAD-1",
+            "source": "Schoots et al., BJU Int 2021 (risk-adapted biopsy decisions)",
+            "text": "PSA density thresholds around 0.15-0.20 ng/mL/cc are associated with a higher probability of clinically significant cancer; low PSA density with negative or equivocal MRI identifies men at low risk who may safely avoid immediate biopsy.",
+            "score": 0.217
+          },
+          {
+            "id": "AI-1",
+            "source": "Principles for AI-based clinical decision support",
+            "text": "AI outputs should be presented with calibrated uncertainty, the evidence used, and known limitations; the treating clinician remains responsible for the decision, and uncertain cases should be escalated to multidisciplinary review.",
+            "score": 0.358
+          }
+        ]
+      }
+    },
+    {
+      "tool": "retrieve_evidence",
+      "input": {
+        "query": "uncertain AI output escalate multidisciplinary review",
+        "k": 1
+      },
+      "output": {
+        "query": "uncertain AI output escalate multidisciplinary review",
+        "results": [
+          {
+            "id": "AI-1",
+            "source": "Principles for AI-based clinical decision support",
+            "text": "AI outputs should be presented with calibrated uncertainty, the evidence used, and known limitations; the treating clinician remains responsible for the decision, and uncertain cases should be escalated to multidisciplinary review.",
+            "score": 0.358
+          }
+        ]
+      }
+    }
+  ]
+}
